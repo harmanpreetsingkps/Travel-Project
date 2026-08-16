@@ -84,10 +84,12 @@ const loginUser = asyncHandler(async (req, res) => {
 
         user.save()
         const options = {
-            httpOnly: true,
-            secure: true,
-            sameSite: true
-        }
+        httpOnly: true,
+        // secure: true,
+        // sameSite: true
+        secure: false,
+        sameSite: "lax"
+    }
         return res.status(200).cookie("refreshToken", generatedRefreshToken, options).json(
             new apiResponse(200,
                 "Logged In Sucessfully",
@@ -115,8 +117,10 @@ const logout = asyncHandler(async (req, res) => {
     user.save();
     const options = {
         httpOnly: true,
-        secure: true,
-        sameSite: true
+        // secure: true,
+        // sameSite: true
+        secure: false,
+        sameSite: "lax"
     }
     return res.status(200).cookie("refreshToken", " ", options).json(
         new apiResponse(200, "User logged out sucessfully", { AccessToken: null })

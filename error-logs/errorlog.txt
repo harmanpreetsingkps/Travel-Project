@@ -403,3 +403,55 @@
     at next (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\router\index.js:291:5)
     at router.handle (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\router\index.js:186:3)"
     
+    <h1>Error Name Is "ValidationError"</h1>,
+    Error Status is "500",
+    Error Message is "User validation failed: email: Path `email` is required., password: Path `password` (`123`, length 3) is shorter than the minimum allowed length (8).",
+    Error Data is "null",
+    Error Date and Time is "Sun Aug 16 2026 23:20:56 GMT+0530 (India Standard Time)",
+    Error Stack is "ValidationError: User validation failed: email: Path `email` is required., password: Path `password` (`123`, length 3) is shorter than the minimum allowed length (8).
+    at model.validate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\document.js:2864:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:398:7)
+    at async maybeTracedSave (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:674:7)
+    at async model.create (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:2762:5)
+    at async file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:36:23"
+    
+    <h1>Error Name Is "ValidationError"</h1>,
+    Error Status is "500",
+    Error Message is "User validation failed: password: Path `password` (`sdfsdf`, length 6) is shorter than the minimum allowed length (8).",
+    Error Data is "null",
+    Error Date and Time is "Sun Aug 16 2026 23:23:07 GMT+0530 (India Standard Time)",
+    Error Stack is "ValidationError: User validation failed: password: Path `password` (`sdfsdf`, length 6) is shorter than the minimum allowed length (8).
+    at model.validate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\document.js:2864:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:398:7)
+    at async maybeTracedSave (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:674:7)
+    at async model.create (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:2762:5)
+    at async file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:36:23"
+    
+    <h1>Error Name Is "ValidationError"</h1>,
+    Error Status is "500",
+    Error Message is "User validation failed: password: Path `password` (`123`, length 3) is shorter than the minimum allowed length (8).",
+    Error Data is "null",
+    Error Date and Time is "Sun Aug 16 2026 23:25:36 GMT+0530 (India Standard Time)",
+    Error Stack is "ValidationError: User validation failed: password: Path `password` (`123`, length 3) is shorter than the minimum allowed length (8).
+    at model.validate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\document.js:2864:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:398:7)
+    at async maybeTracedSave (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:674:7)
+    at async model.create (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:2762:5)
+    at async file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:36:23"
+    
+    <h1>Error Name Is "ValidationError"</h1>,
+    Error Status is "500",
+    Error Message is "User validation failed: password: Path `password` (`123456`, length 6) is shorter than the minimum allowed length (8).",
+    Error Data is "null",
+    Error Date and Time is "Sun Aug 16 2026 23:28:14 GMT+0530 (India Standard Time)",
+    Error Stack is "ValidationError: User validation failed: password: Path `password` (`123456`, length 6) is shorter than the minimum allowed length (8).
+    at model.validate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\document.js:2864:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async model.$__save (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:398:7)
+    at async maybeTracedSave (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:674:7)
+    at async model.create (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:2762:5)
+    at async file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:36:23"
+    
