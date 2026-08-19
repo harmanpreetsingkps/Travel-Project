@@ -3,6 +3,7 @@ import router from "./route/user.route.js";
 import errorHandler from "./middleware/errorHandler.middleware.js";
 import logRouter from "./route/error.logs.route.js";
 import cors from "cors"
+import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
@@ -11,6 +12,8 @@ app.use(
   })
 );
 
+
+app.use(cookieParser())
 
 // app.use(cors())
 // app.options('*', cors())

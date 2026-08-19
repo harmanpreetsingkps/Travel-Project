@@ -32,7 +32,10 @@ const registerUser = asyncHandler(async (req, res) => {
     let uploadedFile;
     if (avatar) {
         uploadedFile = await cloudinary.uploader.upload(req.file.path)
+        console.log(uploadedFile)
     }
+    
+   
     const savedUser = await User.create({
         name,
         username,
@@ -159,4 +162,6 @@ const deleteUser = asyncHandler(async (req, res) => {
         new apiResponse(200, "User Deleted Successfully", null)
     )
 })
+
+
 export { registerUser, loginUser, logout, currentUser, deleteUser }
