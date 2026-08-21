@@ -22,7 +22,7 @@ const addCountry = async (req, res)=>{
     }
 
     const existedCountry = await Country.findOne({countryName: {$eq : alldata.countryName}})
-    if(existedCountry)return res.status(409).json(409, `Country already existed with name ${alldata.countryName}`)
+    if(existedCountry)return res.status(409).json(new errorResponse (409, `Country already existed with name ${alldata.countryName}`))
         const savedCountry = await Country.create({
             countryName : alldata.countryName,
             discription: alldata.discription, 

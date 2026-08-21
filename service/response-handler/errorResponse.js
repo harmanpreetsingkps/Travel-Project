@@ -6,6 +6,7 @@ class errorResponse extends Error{
 
         this.status = statuscode;
         this.success = false;
+        this.message = message;
         this.errors = errors;
         Error.captureStackTrace(this, this.constructor);
     }

@@ -4,6 +4,7 @@ import errorHandler from "./middleware/errorHandler.middleware.js";
 import logRouter from "./route/error.logs.route.js";
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import locationRouter from "./route/locations.routes.js";
 const app = express();
 app.use(
   cors({
@@ -39,6 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/user", router);
 app.use("/file", logRouter);
+app.use("/location", locationRouter)
 app.use("/logs", express.static("./error-logs/errorlog.txt"))
 
 app.get('/', (req , res)=>{
