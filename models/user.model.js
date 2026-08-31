@@ -35,6 +35,9 @@ const userSchema = new mongoose.Schema(
         refreshToken: {
             type: String,
             default: null
+        },sublocation: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "SubLocation"
         }
     }
     

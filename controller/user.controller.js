@@ -164,4 +164,38 @@ const deleteUser = asyncHandler(async (req, res) => {
 })
 
 
-export { registerUser, loginUser, logout, currentUser, deleteUser }
+const userType = asyncHandler(async(req, res)=>{
+    const {changeUserName, typeChange, locationname} = req.body
+    
+    if(!changeUserName)return res.status(400).json(new apiResponse(400, "Please provide the name of the user, which you want to change."))
+    
+
+        if(typeChange == "guide" && !locationname)return res.status(400).json(400, "Please procide at least one location for guide")
+
+
+    const userFind = await User.findOne({
+        name:{$eq: changeUserName}
+    })
+
+
+    if(!userFind)return res.status(404).json(new apiResponse(404, "User add first to change the \"Type\" of the user."))
+   
+
+    if(["user", "guide", "admin"].includes(typeChange)){
+
+    userFind.role = typeChange;
+    await userFind.save()
+
+    return res.status(200).json(new apiResponse(200, `User role change successfully of ${userFind.name} to ${userFind.role}.`))
+    }
+    console.log(typeChange + "Hello")
+    console.log(userFind.username + "Hello2")
+
+
+    return res.status(400).json(new apiResponse(400, "Please provide type to assiged to user. Or check type added"))
+
+
+})
+
+
+export { registerUser, loginUser, logout, currentUser, deleteUser, userType }

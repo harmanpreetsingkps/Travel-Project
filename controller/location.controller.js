@@ -6,7 +6,7 @@ import errorResponse from "../service/response-handler/errorResponse.js"
 const addCountry = async (req, res)=>{
     const alldata = req.body
 
-    const reqStaticData = ["countryName", "discription", "continent", "currency", "climate", "peakSeason", "capitalCity", "largestCity", "products"]
+    const reqStaticData = ["countryName", "description", "continent", "currency", "climate", "peakSeason", "capitalCity", "largestCity", "products"]
 
     //Check if the data is sending correctly.
     for(let v in alldata){
@@ -25,7 +25,7 @@ const addCountry = async (req, res)=>{
     if(existedCountry)return res.status(409).json(new errorResponse (409, `Country already existed with name ${alldata.countryName}`))
         const savedCountry = await Country.create({
             countryName : alldata.countryName,
-            discription: alldata.discription, 
+            description: alldata.description, 
             continent: alldata.continent, 
             currency: alldata.currency, 
             climate: alldata.climate, 

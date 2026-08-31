@@ -34,7 +34,7 @@ const addSubLocation = async (req, res) => {
 
     if (!savedLocation) return res.status(500).json(new apiResponse(500, false, "Unable To Save The Sub Location"))
 
-    return res.send(200).json(new apiResponse(
+    return res.status(200).json(new apiResponse(
         200,
         "Sub Location Saved Successfull",
         savedLocation

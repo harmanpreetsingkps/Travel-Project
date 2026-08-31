@@ -1,5 +1,5 @@
 import express from "express";
-import { currentUser, deleteUser, loginUser, logout, registerUser } from "../controller/user.controller.js";
+import { currentUser, deleteUser, loginUser, logout, registerUser, userType } from "../controller/user.controller.js";
 import upload from "../service/multer/multer.js";
 import verifyJwt from "../middleware/jwt.middleware.js";
 import checkUserType from "../middleware/AccessControl.middleware.js";
@@ -14,6 +14,7 @@ router.route('/logout').get(verifyJwt,logout);
 router.route('/current-user').get(verifyJwt, currentUser);
 router.route('/delete-user').get(verifyJwt, deleteUser)
 router.route('/add-country').post(verifyJwt,checkUserType("admin"),addCountry)
+router.route('/change-user-role').post(verifyJwt, checkUserType("admin"),userType)
 
 
 export default router;

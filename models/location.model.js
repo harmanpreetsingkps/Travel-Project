@@ -8,7 +8,7 @@ const countrySchema = new mongoose.Schema(
             required: true,
             unique: true,
         },
-        discription: {
+        description: {
             type: String
         },
         continent: {
@@ -54,7 +54,7 @@ const countrySchema = new mongoose.Schema(
         largestCity: {
             type: String
         },
-         image: {
+         images: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Image"
          }
