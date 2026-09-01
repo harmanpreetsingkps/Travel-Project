@@ -13,10 +13,10 @@ const SubLocationSchema = new mongoose.Schema({
         ref: "Country"
     }, timeForVisit: {
         type: String
-    }, Guides: {
+    }, Guides: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Guide"
-    }, images: {
+        ref: "User"
+    }], images: {
         type: String
 
     }, business: {

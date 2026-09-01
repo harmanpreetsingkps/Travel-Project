@@ -5,6 +5,7 @@ import errorResponse from "../service/response-handler/errorResponse.js";
 import cloudinary from "../utils/cloudinary/cloudinary.config.js";
 import path from "path";
 import bcrypt from "bcrypt"
+import SubLocation from "../models/subLocation.model.js";
 
 
 
@@ -34,8 +35,8 @@ const registerUser = asyncHandler(async (req, res) => {
         uploadedFile = await cloudinary.uploader.upload(req.file.path)
         console.log(uploadedFile)
     }
-    
-   
+
+
     const savedUser = await User.create({
         name,
         username,
@@ -87,12 +88,12 @@ const loginUser = asyncHandler(async (req, res) => {
 
         user.save()
         const options = {
-        httpOnly: true,
-        // secure: true,
-        // sameSite: true
-        secure: false,
-        sameSite: "lax"
-    }
+            httpOnly: true,
+            // secure: true,
+            // sameSite: true
+            secure: false,
+            sameSite: "lax"
+        }
         return res.status(200).cookie("refreshToken", generatedRefreshToken, options).json(
             new apiResponse(200,
                 "Logged In Sucessfully",
@@ -164,29 +165,39 @@ const deleteUser = asyncHandler(async (req, res) => {
 })
 
 
-const userType = asyncHandler(async(req, res)=>{
-    const {changeUserName, typeChange, locationname} = req.body
-    
-    if(!changeUserName)return res.status(400).json(new apiResponse(400, "Please provide the name of the user, which you want to change."))
-    
+const userType = asyncHandler(async (req, res) => {
+    const { changeUserName, typeChange, locationname } = req.body
 
-        if(typeChange == "guide" && !locationname)return res.status(400).json(400, "Please procide at least one location for guide")
+    if (!changeUserName) return res.status(400).json(new apiResponse(400, "Please provide the name of the user, which you want to change."))
+
+
+    if (typeChange == "guide" && !locationname) return res.status(400).json(400, "Please procide at least one location for guide")
 
 
     const userFind = await User.findOne({
-        name:{$eq: changeUserName}
+        name: { $eq: changeUserName }
     })
 
+      let existedLocation = null 
+    //For checking the country and saving the _id
+    if (locationname) {
+            existedLocation = await SubLocation.findOne({
+            name: locationname
+        })
+            if(!existedLocation)return res.status(404).json( new apiResponse(404, "Location Not Found"))
+    }
 
-    if(!userFind)return res.status(404).json(new apiResponse(404, "User add first to change the \"Type\" of the user."))
-   
 
-    if(["user", "guide", "admin"].includes(typeChange)){
+    if (!userFind) return res.status(404).json(new apiResponse(404, "User add first to change the \"Type\" of the user."))
 
-    userFind.role = typeChange;
-    await userFind.save()
 
-    return res.status(200).json(new apiResponse(200, `User role change successfully of ${userFind.name} to ${userFind.role}.`))
+    if (["user", "guide", "admin"].includes(typeChange)) {
+
+        userFind.role = typeChange;
+        await userFind.save()
+       if(existedLocation)await existedLocation.Guides.push(userFind._id)
+        await existedLocation.save()
+        return res.status(200).json(new apiResponse(200, `User role change successfully of ${userFind.name} to ${userFind.role}.`))
     }
     console.log(typeChange + "Hello")
     console.log(userFind.username + "Hello2")

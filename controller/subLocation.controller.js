@@ -1,3 +1,4 @@
+import Country from "../models/location.model.js";
 import SubLocation from "../models/subLocation.model.js";
 import apiResponse from "../service/response-handler/apiResponse.js";
 
@@ -6,7 +7,7 @@ const addSubLocation = async (req, res) => {
     const data = req.body;
 
 
-    const dateExpected = ["name", "description", "country", "timeForVisit"]
+    const dateExpected = ["name", "description", "timeForVisit", "parentLocation"]
     for (let d in data) {
         console.log(d)
         if (!dateExpected.includes(d)) {
@@ -24,15 +25,28 @@ const addSubLocation = async (req, res) => {
         )
     }
 
+        //Check parent Location Like Country
+        const existedParentLcoation = await Country.findOne({
+            countryName: data.parentLocation
+        })
+        if(!existedParentLcoation)return res.status(404).json(404, "Country Not Found")
+
     const savedLocation = await SubLocation.create({
         name: data.name,
         description: data.description,
-        country: data.country,
-        timeForVisit: data.timeForVisit
+        timeForVisit: data.timeForVisit,
+        country: data.parentLocation._id
 
     })
 
+
+   
+
     if (!savedLocation) return res.status(500).json(new apiResponse(500, false, "Unable To Save The Sub Location"))
+
+                
+        existedParentLcoation.sublocation.push(savedLocation._id)
+        await existedParentLcoation.save()
 
     return res.status(200).json(new apiResponse(
         200,

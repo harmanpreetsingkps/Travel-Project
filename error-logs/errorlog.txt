@@ -1,0 +1,79 @@
+
+    <h1>Error Name Is "TypeError"</h1>,
+    Error Status is "500",
+    Error Message is "Assignment to constant variable.",
+    Error Data is "null",
+    Error Date and Time is "Mon Aug 31 2026 21:04:13 GMT+0530 (India Standard Time)",
+    Error Stack is "TypeError: Assignment to constant variable.
+    at file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:184:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    
+    <h1>Error Name Is "ReferenceError"</h1>,
+    Error Status is "500",
+    Error Message is "existedUser is not defined",
+    Error Data is "null",
+    Error Date and Time is "Mon Aug 31 2026 21:07:37 GMT+0530 (India Standard Time)",
+    Error Stack is "ReferenceError: existedUser is not defined
+    at file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:199:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    
+    <h1>Error Name Is "TypeError"</h1>,
+    Error Status is "500",
+    Error Message is "Cannot read properties of undefined (reading 'push')",
+    Error Data is "null",
+    Error Date and Time is "Mon Aug 31 2026 21:08:02 GMT+0530 (India Standard Time)",
+    Error Stack is "TypeError: Cannot read properties of undefined (reading 'push')
+    at file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:199:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    
+    <h1>Error Name Is "TypeError"</h1>,
+    Error Status is "500",
+    Error Message is "Cannot read properties of undefined (reading 'push')",
+    Error Data is "null",
+    Error Date and Time is "Mon Aug 31 2026 21:09:10 GMT+0530 (India Standard Time)",
+    Error Stack is "TypeError: Cannot read properties of undefined (reading 'push')
+    at file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/user.controller.js:199:56
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    
+    <h1>Error Name Is "TypeError"</h1>,
+    Error Status is "500",
+    Error Message is "Cannot read properties of undefined (reading 'push')",
+    Error Data is "null",
+    Error Date and Time is "Tue Sep 01 2026 20:52:32 GMT+0530 (India Standard Time)",
+    Error Stack is "TypeError: Cannot read properties of undefined (reading 'push')
+    at addSubLocation (file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/subLocation.controller.js:48:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    
+    <h1>Error Name Is "StrictPopulateError"</h1>,
+    Error Status is "500",
+    Error Message is "Cannot populate path `User` because it is not in your schema. Set the `strictPopulate` option to false to override.",
+    Error Data is "null",
+    Error Date and Time is "Tue Sep 01 2026 21:58:08 GMT+0530 (India Standard Time)",
+    Error Stack is "StrictPopulateError: Cannot populate path `User` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:55:12)
+    at _populatePath (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:4495:21)
+    at model.populate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:4462:21)
+    at model.Query._find (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\query.js:2511:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async maybeTracedQueryExec (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\query.js:4801:65)
+    at async file:///C:/Users/Harman%20Preet%20Singh/Desktop/P%20Project/Travel%20Website/controller/location.controller.js:45:30"
+    
+    <h1>Error Name Is "MissingSchemaError"</h1>,
+    Error Status is "500",
+    Error Message is "Schema hasn't been registered for model "Guide".
+Use mongoose.model(name, schema)",
+    Error Data is "null",
+    Error Date and Time is "Tue Sep 01 2026 22:15:05 GMT+0530 (India Standard Time)",
+    Error Stack is "MissingSchemaError: Schema hasn't been registered for model "Guide".
+Use mongoose.model(name, schema)
+    at NativeConnection.model (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\connection.js:1514:13)
+    at _getModelFromConn (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:708:15)
+    at addModelNamesToMap (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:636:17)
+    at getModelsMapForPopulate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:218:7)
+    at _populatePath (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:4495:21)
+    at model.populate (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\model.js:4462:21)
+    at model.Query._find (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\query.js:2511:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async maybeTracedQueryExec (C:\Users\Harman Preet Singh\Desktop\P Project\Travel Website\node_modules\mongoose\lib\query.js:4801:65)
+    at async Promise.all (index 0)"
+    

@@ -59,13 +59,18 @@ const countrySchema = new mongoose.Schema(
             ref: "Image"
          }
         ,
-        guides: {
+        guides: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-        },
-        products: {   //Pending this well add in the next step
-            type: String
-        }
+        }],sublocation:[{
+            //Add sublocation in the contry
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "SubLocation"
+        }],
+        products: [{   //Pending this well add in the next step
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product"
+        }]
         ,
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
